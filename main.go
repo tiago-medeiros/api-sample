@@ -59,7 +59,7 @@ func updateProduct(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)
 	id := params["id"]
-Monitor
+
 	var updatedProduct Product
 	_ = json.NewDecoder(r.Body).Decode(&updatedProduct)
 
