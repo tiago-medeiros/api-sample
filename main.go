@@ -59,7 +59,7 @@ func updateProduct(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)
 	id := params["id"]
-
+Monitor
 	var updatedProduct Product
 	_ = json.NewDecoder(r.Body).Decode(&updatedProduct)
 
@@ -98,6 +98,14 @@ func main() {
 	products = append(products,
 		Product{ID: "1", Name: "Chair"},
 		Product{ID: "2", Name: "Table"},
+		Product{ID: "3", Name: "Mouse"},
+		Product{ID: "4", Name: "Monitor"},
+		Product{ID: "5", Name: "Cable"},
+		Product{ID: "6", Name: "Smartphone"},
+		Product{ID: "7", Name: "Keyboard"},
+		Product{ID: "8", Name: "Headset"},
+		Product{ID: "9", Name: "Bottle"},
+		Product{ID: "10", Name: "CPU"},
 	)
 
 	// Routes
