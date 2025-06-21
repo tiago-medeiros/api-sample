@@ -2,18 +2,17 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: api-sample-ingress
-  labels:
-    app: api-sample
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+  namespace: api-sample
 spec:
+  ingressClassName: nginx
   rules:
-    - http:
-        paths:
-          - path: /api-sample
-            pathType: Prefix
-            backend:
-              service:
-                name: api-sample-service
-                port:
-                  number: 80
+  - host: api-sample.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              name: https
