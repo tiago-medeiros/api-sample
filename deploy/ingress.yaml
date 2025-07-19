@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: api-sample-ingress
   namespace: api-sample
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
@@ -13,6 +15,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: argocd-server
+            name: api-sample
             port:
-              name: https
+              number: 8000
