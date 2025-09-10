@@ -1,0 +1,12 @@
+samples:
+  app:
+    - name: api-sample
+      image: api-sample:0.1.0
+      replicas: 3
+      service:
+        type: ClusterIP
+        port: 8000
+      ingress:
+        enabled: true
+        host: api-sample.local
+        path: /

@@ -1,0 +1,11 @@
+apiVersion: v2
+name: api-sample
+description: A Helm chart that depends on a chart from GitHub Helm repo
+type: application
+version: 0.1.0
+appVersion: "1.0"
+
+dependencies:
+  - name: samples          # name of the chart in the remote repo
+    version: "0.1.0"        # version you want to use
+    repository: "https://tiago-medeiros.github.io/kube-stack/helm/charts"
