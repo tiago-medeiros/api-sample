@@ -1,0 +1,24 @@
+samples:
+  app:
+    - name: api-sample
+      image: api-sample:0.1.0
+      replicas: 3
+      service:
+        type: ClusterIP
+        port: 8000
+      ingress:
+        enabled: true
+        host: api-sample.local
+        path: /
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "250m"
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+      env:
+        - name: ENVIRONMENT
+          value: "development"
+        - name: DEBUG
+          value: "true"
