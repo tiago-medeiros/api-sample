@@ -91,6 +91,12 @@ func deleteProduct(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(products)
 }
 
+func healthHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	fmt.Fprintf(w, `{"status": "OK", "message": "Service is healthy"}`)
+}
+
 func main() {
 	r := mux.NewRouter()
 
@@ -114,6 +120,7 @@ func main() {
 	r.HandleFunc("/api/products", createProduct).Methods("POST")
 	r.HandleFunc("/api/products/{id}", updateProduct).Methods("PUT")
 	r.HandleFunc("/api/products/{id}", deleteProduct).Methods("DELETE")
+	r.HandleFunc("/healthz", healthHandler).Methods("GET")
 
 	fmt.Println("Starting server at port 8000")
 	log.Fatal(http.ListenAndServe(":8000", r))
