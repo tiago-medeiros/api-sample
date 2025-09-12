@@ -22,3 +22,13 @@ samples:
           value: "development"
         - name: DEBUG
           value: "true"
+      liveness:
+        enabled: true
+        path: /healthz
+        delay: 10
+        period: 30
+      readiness:
+        enabled: true
+        path: /healthz
+        delay: 10
+        period: 30
