@@ -22,7 +22,7 @@ samples:
         metric: memory
         minReplicas: 2
         maxReplicas: 10
-        targetCPUUtilizationPercentage: 60
+        target: 60
       env:
         - name: ENVIRONMENT
           value: "development"
