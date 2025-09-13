@@ -2,7 +2,7 @@ samples:
   app:
     - name: api-sample
       image: api-sample:0.2.0
-      replicas: 10
+      replicas: 2
       service:
         type: ClusterIP
         port: 8000
