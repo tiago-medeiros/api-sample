@@ -19,6 +19,7 @@ samples:
           cpu: "25m"
       hpa:
         enabled: true
+        metric: memory
         minReplicas: 2
         maxReplicas: 10
         targetCPUUtilizationPercentage: 60
