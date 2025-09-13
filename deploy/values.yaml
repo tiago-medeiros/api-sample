@@ -17,6 +17,11 @@ samples:
         limits:
           memory: "128Mi"
           cpu: "500m"
+      hpa:
+        enabled: true
+        minReplicas: 2
+        maxReplicas: 10
+        targetCPUUtilizationPercentage: 60
       env:
         - name: ENVIRONMENT
           value: "development"
