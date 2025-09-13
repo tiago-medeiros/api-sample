@@ -12,10 +12,10 @@ samples:
         path: /
       resources:
         requests:
-          memory: "10Mi"
+          memory: "25Mi"
           cpu: "25m"
         limits:
-          memory: "10Mi"
+          memory: "25Mi"
           cpu: "25m"
       hpa:
         enabled: true
